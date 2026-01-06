@@ -1,0 +1,10 @@
+-- KPI Measures
+Total Searches = SUM(Base_By_Date[value])
+Avg Search Interest = AVERAGE(Base_By_Date[value])
+
+-- Time-based Measures
+Search Trend (All Time) = SUM(Base_By_Date[value])
+Search Trend (7 Days) = SUM(Base_Past_7_Days[value])
+
+-- Dynamic Labels
+Selected Keyword = SELECTEDVALUE(Keywords[keyword], "All Keywords")

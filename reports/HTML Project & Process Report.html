@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Dashboard Project Report - Google Trends Jobs Analytics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 80px;
+        font-family: 'Arial', sans-serif;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        background-color: #fff;
+      }
+
+      /* Override Pico CSS defaults for document look */
+      h1 {
+        font-size: 24pt;
+        color: #2e4053;
+        margin-bottom: 24px;
+        border-bottom: 2px solid #2e4053;
+        padding-bottom: 12px;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 18pt;
+        color: #2874a6;
+        margin-top: 32px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 14pt;
+        color: #444;
+        margin-top: 24px;
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+
+      h4 {
+        font-size: 12pt;
+        color: #555;
+        margin-top: 18px;
+        margin-bottom: 8px;
+        font-style: italic;
+      }
+
+      p,
+      li {
+        text-align: justify;
+        margin-bottom: 12px;
+      }
+
+      ul,
+      ol {
+        margin-left: 20px;
+        padding-left: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 10pt;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      .header-meta {
+        text-align: right;
+        font-size: 10pt;
+        color: #666;
+        margin-bottom: 40px;
+      }
+
+      .figure {
+        text-align: center;
+        margin: 20px 0;
+        font-style: italic;
+        font-size: 9pt;
+        color: #666;
+      }
+
+      .figure img {
+        max-width: 100%;
+        border: 1px solid #ddd;
+      }
+
+      .metric-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #2874a6;
+        padding: 12px;
+        margin: 10px 0;
+      }
+
+      .kpi-value {
+        font-weight: bold;
+        color: #2e4053;
+      }
+    </style>
+  </head>
+  <body style="">
+
+
+    <h1>Project Report: Google Trends Jobs Analytics Dashboard</h1>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+      This report documents the development and deployment of the Google Trends Jobs Analytics Dashboard. This Business
+      Intelligence tool is designed to monitor and analyze search trends related to job market keywords, specifically
+      focusing on roles such as "Data Analyst," "Web Developer," and general job search terms within the Indian market.
+      The dashboard provides real-time insights into search volumes, keyword performance, and geographic distribution,
+      enabling data-driven decisions regarding recruitment strategies and market demand analysis.
+    </p>
+    <p>
+      As of the last system refresh on <strong>May 12, 2024 (05:04)</strong>, the system tracks a total of approximately
+      23,000 search instances across historical timelines, with "India Jobs Jobs" being the dominant search term (12,894
+      instances).
+    </p>
+
+    <h2>2. Project Overview</h2>
+    <p>
+      The primary objective of this Power BI project is to visualize long-term trends and short-term fluctuations in
+      job-seeker interest. By integrating Google Trends data, the dashboard offers a holistic view of the employment
+      landscape.
+    </p>
+    <ul>
+      <li><strong>Tool:</strong> Power BI Desktop / Service</li>
+      <li><strong>Data Source:</strong> Google Trends API / Custom Data Connector</li>
+      <li><strong>Time Scope:</strong> 2004 - 2024 (Historical), Last 7 Days (Real-time)</li>
+
+    </ul>
+
+    <h2>3. Dashboard Components Analysis</h2>
+
+    <h3>3.1 Overview Page</h3>
+    <p>The Overview Page serves as the entry point, providing a high-level summary of long-term trends.</p>
+    <div class="metric-box">
+      <strong>Key Metrics:</strong>
+      <ul>
+        <li><strong>Total Searches Tracked:</strong> 23K</li>
+        <li><strong>Dominant Keyword:</strong> "India Jobs Jobs" (12,894)</li>
+        <li><strong>Secondary Keyword:</strong> "Web Developer" (4,808)</li>
+      </ul>
+    </div>
+    <p>
+      This page features a timeline slider allowing users to filter data between the years 2004 and 2024. An area chart
+      visualizes the search volume over time, highlighting a significant peak in search interest around 2010-2015 for
+      job-related terms. A set of scorecard visuals displays the aggregate volume for individual keywords.
+    </p>
+
+    <h3>3.2 Detailed Analytics Page</h3>
+    <p>
+      This component focuses on granular analysis of specific timeframes and keywords. It displays a "Total Searches"
+      KPI of 7,665 for the selected context. It includes:
+    </p>
+    <ul>
+      <li>
+        <strong>Trend Line Charts:</strong> Visualizing daily search volume fluctuations (e.g., Data Analyst searches
+        dipping significantly on June 27th).
+      </li>
+      <li>
+        <strong>Top &amp; Rising Tables:</strong> A dedicated section lists related queries, such as "Apprenticeship,"
+        "Career," and "Cover letter," categorized by their search volume or "rising" status.
+      </li>
+      <li>
+        <strong>Rising Metric:</strong> Specifically highlights keywords with significant recent growth, such as "Cover
+        letter" (+160).
+      </li>
+    </ul>
+
+    <h3>3.3 Geographic Visualization Page</h3>
+    <p>The geographic view offers a global perspective on search intent.</p>
+    <ul>
+      <li>
+        <strong>Visualization:</strong> A world map centers on the EMEA region, using color intensity to denote search
+        volume.
+      </li>
+      <li>
+        <strong>Short-term Analysis:</strong> A "Last 7 Days" card tracks 8K searches, providing a dot-plot chart for
+        daily activity across tracked keywords.
+      </li>
+      <li>
+        <strong>Keyword Distribution:</strong> A bar chart compares relative popularity, showing "Data Analyst"
+        capturing 46.0% of the specific segment interest, followed by "The Developer" at 25.0%.
+      </li>
+    </ul>
+
+    <h3>3.4 Jobs Keywords Page</h3>
+    <p>This page provides tabular data for deep-dive analysis into keyword performance.</p>
+    <ul>
+      <li>
+        <strong>Categorization:</strong> Keywords are split into "Rising" (trending up) and "Top" (highest volume).
+      </li>
+      <li>
+        <strong>Triangle Indicators:</strong> Visual cues (upward red/blue triangles) indicate positive momentum for
+        terms like "Cover letter" (160), "Employment" (60), and "Full-time job" (50).
+      </li>
+      <li>
+        <strong>Detailed Table:</strong> A comprehensive grid lists Topic Types (e.g., Topic, Occupation, Professional
+        Field) alongside their respective search values.
+      </li>
+    </ul>
+
+    <h2>4. Data Architecture</h2>
+    <p>
+      The data model is built upon a star schema structure, integrating API responses with dimension tables. Based on
+      the data pane, the following tables are utilized:
+    </p>
+
+    <table>
+      <tbody><tr>
+        <th>Table Name</th>
+        <th>Description &amp; Purpose</th>
+      </tr>
+      <tr>
+        <td><strong>Base_API_Country</strong></td>
+        <td>Stores base location data retrieved from the API.</td>
+      </tr>
+      <tr>
+        <td><strong>Base_By_Date</strong></td>
+        <td>Fact table containing the primary time-series search volume data.</td>
+      </tr>
+      <tr>
+        <td><strong>Country_API &amp; Countries with Flags</strong></td>
+        <td>Dimension tables for geographic mapping, likely including ISO codes and flag URLs.</td>
+      </tr>
+      <tr>
+        <td><strong>Keyword &amp; Related_Keyword_Main</strong></td>
+        <td>Dimension tables storing the list of tracked keywords and their relationships.</td>
+      </tr>
+      <tr>
+        <td><strong>Rising_Keywords &amp; Top_Keywords</strong></td>
+        <td>Aggregated tables specifically for the "Rising" and "Top" visuals to optimize performance.</td>
+      </tr>
+      <tr>
+        <td><strong>Dynamic_Date &amp; Refresh_Date</strong></td>
+        <td>Date dimension tables to handle time intelligence functions and display the last refresh timestamp.</td>
+      </tr>
+    </tbody></table>
+
+    <h2>5. Key Features and Visualizations</h2>
+    <ul>
+      <li>
+        <strong>Dynamic Time Slicing:</strong> The timeline slider (2004-2024) allows for flexible period analysis.
+      </li>
+      <li><strong>Geospatial Mapping:</strong> Integration of world maps to pinpoint interest by region.</li>
+      <li><strong>Real-time Indicators:</strong> Specific "Last 7 Days" visuals to monitor immediate trends.</li>
+      <li>
+        <strong>Comparative Analysis:</strong> Multi-line charts allowing direct comparison between "Data Analyst," "Web
+        Developer," and generic job searches.
+      </li>
+      <li>
+        <strong>Navigation:</strong> Custom navigation buttons (Forward arrows) facilitate a guided user experience
+        through the report pages.
+      </li>
+    </ul>
+
+    <h2>6. Technical Implementation Process</h2>
+    <p>The implementation followed a standard Power BI development lifecycle:</p>
+    <ol>
+      <li>
+        <strong>Data Ingestion:</strong> Connection to Google Trends data sources via API calls (evidenced by "_API"
+        table suffixes).
+      </li>
+      <li>
+        <strong>Data Transformation (Power Query):</strong> Cleaning and shaping data, particularly separating "Top" and
+        "Rising" metrics into distinct tables for easier visualization.
+      </li>
+      <li>
+        <strong>Data Modeling:</strong> establishing relationships between the Date dimension, Keyword dimension, and
+        the Fact tables (Search Volumes).
+      </li>
+      <li>
+        <strong>Measure Calculation:</strong> Creating DAX measures for "Total Searches," "Rising Value," and percentage
+        distributions.
+      </li>
+      <li>
+        <strong>UI/UX Design:</strong> Designing the canvas with a clean, light-themed aesthetic, using rounded cards
+        for KPI grouping.
+      </li>
+    </ol>
+
+    <h2>7. Data Sources and Refresh Strategy</h2>
+    <p><strong>Primary Source:</strong> Google Trends (inferred from dashboard title and data context).</p>
+    <p>
+      <strong>Refresh Strategy:</strong> The dashboard displays a "Last Refresh Date" of
+      <strong>12-May-24, 05:04</strong>. This implies an automated refresh schedule, likely configured on the Power BI
+      Service via a Gateway to fetch updated API data daily or weekly.
+    </p>
+
+    <h2>8. Key Insights and Findings</h2>
+    <ul>
+      <li>
+        <strong>Keyword Dominance:</strong> "India Jobs Jobs" is the significant outlier, commanding the highest total
+        search volume (12,894), suggesting a very high intent for domestic employment in the dataset context.
+      </li>
+      <li>
+        <strong>Role Popularity:</strong> "Web Developer" (4,808) searches significantly outpace "Data Analyst" (3,075)
+        in the long-term historical view, though recent short-term trends might differ.
+      </li>
+      <li>
+        <strong>Geographic Focus:</strong> The data appears heavily skewed or filtered towards the Indian market or
+        specific global regions interested in Indian job markets.
+      </li>
+      <li>
+        <strong>Emerging Topics:</strong> "Cover letter" is a top rising topic (Value: 160), indicating a user need for
+        application preparation assistance.
+      </li>
+    </ul>
+
+    <h2>9. Recommendations</h2>
+    <p>Based on the analysis of the dashboard and its data:</p>
+    <ul>
+      <li>
+        <strong>Data Quality Check:</strong> The "Linkdin Jobs" keyword shows 0 searches. This suggests a potential
+        misspelling in the query ("LinkedIn" vs "Linkdin") or a data fetch issue that should be corrected.
+      </li>
+      <li>
+        <strong>Drill-down Capabilities:</strong> Enhance the geographic view to allow drilling down from Country to
+        City level for better regional targeting.
+      </li>
+      <li>
+        <strong>Correlations:</strong> Consider adding external datasets (e.g., actual job posting volumes from job
+        portals) to correlate "Search Interest" vs "Actual Market Demand."
+      </li>
+      <li>
+        <strong>Alerting:</strong> Set up Power BI alerts for when specific "Rising Keywords" cross a certain threshold
+        to notify the recruitment team of emerging trends immediately.
+      </li>
+    </ul>
+  
+
+</body></html>
